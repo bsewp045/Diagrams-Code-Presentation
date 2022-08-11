@@ -7,11 +7,11 @@ date: \today
 
 # Motivation
 
-- Faster than methods that involve manually inserting and editing the images
-- Automatic alignment of the icons and arrows
+- Faster than methods that involve manually inserting and editing images
+- Automatic alignment of icons and arrows
 - Consistency of icons
 - Easy to make updates
-- Easy to monitor changes in the diagram
+- Easy to monitor changes in the diagrams
 - Can be included as part of a project in a github repository as python code
 
 # Purpose
