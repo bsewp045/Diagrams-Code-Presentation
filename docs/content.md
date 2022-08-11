@@ -1,15 +1,18 @@
 ---
-title: Diagrams Package
-subtitle: Draw the cloud system architecture in python
+title: Diagrams Package In Python
+subtitle: A sophisticated approach to creating diagrams
 author: Bhavika Sewpal
 date: \today
 ---
 
 # Motivation
 
-- Consistency (same icons)
-- Easy to update
-- Keep track of changes in the diagram
+- Faster than methods that involve manually inserting and editing the images
+- Automatic alignment of the icons and arrows
+- Consistency of icons
+- Easy to make updates
+- Easy to monitor changes in the diagram
+- Can be included as part of a project in a github repository as python code
 
 # Purpose
 - Diagrams let you draw the cloud system architecture in Python code
@@ -18,18 +21,16 @@ date: \today
   - Azure
   - GCP
   - Kubernetes
-  - Alibaba
-
-
+  - Saas
 
 # Requirements
 
 - Diagrams require Python 3.6 or higher
-- It uses Graphviz - an open source graph visualization software - to render the diagram
+- It uses Graphviz - an open source graph visualization software - to render the diagrams
 
-# Objects 
+# Concepts 
 
-- Diagrams has 4 objects:
+- Diagrams has 4 concepts:
   - Diagrams
   - Nodes
   - Clusters
@@ -53,8 +54,7 @@ with Diagram("Simple Diagram", show=False):
 
 
 # Nodes
-
-- A node represents a system component
+- A node represents a single system component
 - A node consists of three parts:
   - a provider
   - a resource type
@@ -75,7 +75,6 @@ from diagrams import Diagram
 from diagrams.aws.compute import EC2
 from diagrams.aws.database import RDS
 from diagrams.aws.network import ELB
-
 with Diagram("Group Data Flow", show=False, direction="TB"):
     ELB("lb") >> [EC2("worker1"),
                   EC2("worker2"),
@@ -85,12 +84,11 @@ with Diagram("Group Data Flow", show=False, direction="TB"):
 ```
 # Nodes - Data Flow (cont.)
 
-![](../assets/group_data_flow.png){width=55%}
+![](../assets/group_data_flow.png){width=100%, height=70%}
 
-# Cluster
-
+# Clusters
 - Cluster allows you to group nodes in an isolated group
-- A cluster context is created with the Cluster Class
+- Clusters can be nested as well
 ```python
 from diagrams import Cluster, Diagram
 from diagrams.aws.compute import ECS
@@ -105,16 +103,25 @@ with Diagram("Simple Web Service with DB Cluster", show=False):
     dns >> web >> db_primary
 ```
 
-# Cluster (cont.)
-![](../assets/simple_web_service_with_db_cluster.png){width=50%}
-- Clusters can be nested as well
+# Clusters (cont.)
+![](../assets/simple_web_service_with_db_cluster.png){height=100%,width=40%}
 
 # Edges
-- An edge is a connection between nodes with some additional properties
+- An edge represents a linkage between nodes with some additional properties
 - An edge object contains three attributes:
   - label
   - color
   - style (example: dashed, dotted, bold)
 
+# Simplified Diagram for BlobCSI System
+- Diagram showing the links between Kubeflow Notebooks, PVCs, PVs and Azure Containers
+- [blobcsi_kubeflow_pvc_pv_azure.py](https://github.com/StatCan/aaw-kubeflow-profiles-controller/blob/main/docs/diagrams/blobcsi_kubeflow_pvc_pv_azure.py)
+- This diagram illustrates that:
+  - clusters can be nested
+  - nodes can be joined across clusters
+  - the edges can be labelled and formatted
+
+# Simplified Diagram for BlobCSI System (cont.)
+  ![](../assets/blobcsi_kubeflow_pvc_pv_azure.png){width=100%, height=70%}
 
 # Questions?
