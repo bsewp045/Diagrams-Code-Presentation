@@ -1,5 +1,5 @@
 ---
-title: Diagrams Package In Python
+title: Benefits of Using the Diagrams Package In Python
 subtitle: A sophisticated approach to creating diagrams
 author: Bhavika Sewpal
 date: \today
@@ -11,7 +11,7 @@ date: \today
 - Automatic alignment of icons and arrows
 - Consistency of icons
 - Easy to make updates
-- Easy to monitor changes in the diagrams
+- Easy to monitor changes in diagrams
 - Can be included as part of a project in a github repository as python code
 
 # Purpose
@@ -61,9 +61,9 @@ with Diagram("Simple Diagram", show=False):
   - a name
 
 ```python
-from diagrams.aws.compute import EC2
+from diagrams.k8s.compute import Pod
 ```
-In the above example, aws is the provider, compute is the resource type and EC2 is the name
+In the above example, k8s is the provider, compute is the resource type and Pod is the name
 
 # Nodes - Data Flow
 
@@ -123,5 +123,11 @@ with Diagram("Simple Web Service with DB Cluster", show=False):
 
 # Simplified Diagram for BlobCSI System (cont.)
   ![](../assets/blobcsi_kubeflow_pvc_pv_azure.png){width=100%, height=70%}
+
+# Summary
+- Diagrams as code in python demonstrated to be an easy, practical and useful tool
+- Storing diagrams as code improves comprehension of complex CI/CD cloud deployments
+- Diff comparisons of diagram as code makes change management easier
+- Leverages python skills – just learn python markup methods but easier than mastering a separate model or GUI tool
 
 # Questions?
